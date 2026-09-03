@@ -46,8 +46,11 @@ const stars = Array.from({ length: 70 }, function () {
 window.addEventListener("load", function () {
     board = document.getElementById("game-canvas");
     context = board.getContext("2d");
-    setupStartMenu();
+    //setupStartMenu();
 
+    gameStarted = true;
+    timestamp = performance.now();
+    lastFrameTime = timestamp;
     resizeBoard();
     window.addEventListener("resize", resizeBoard);
     document.addEventListener("keydown", handleKeyDown);
@@ -240,6 +243,7 @@ function drawGame() {
         context.font = "bold 28px sans-serif";
         context.fillText("Game over", width / 2, height / 2 - 10);
         context.font = "16px sans-serif";
+        context.fillText(`Score: ${score}`, width / 2, height / 2 + 40);
         context.fillText("Press Space to restart", width / 2, height / 2 + 22);
     }
 }
