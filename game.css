@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
+    background-color: #050505;
+}
+#game-canvas {
+    width: 50vw;
+    height: 90vh;
+    display: block;
+    margin: 0 auto;
+    background-color: #050505;
+}
+
+.start-menu {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: rgba(5, 5, 5, 0.78);
+}
+
+.start-menu[hidden] {
+    display: none;
+}
+
+.start-panel {
+    width: min(100%, 420px);
+    box-sizing: border-box;
+    padding: 32px;
+    color: #ffffff;
+    text-align: left;
+    background: #161616;
+    border: 1px solid #454545;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+.start-panel h1 {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.intro {
+    margin: 0 0 24px;
+    color: #c6c6c6;
+    line-height: 1.5;
+}
+
+.start-panel label:not(.anonymous-option) {
+    display: block;
+    margin: 16px 0 6px;
+    font-size: 0.95rem;
+}
+
+.start-panel input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    color: #ffffff;
+    font: inherit;
+    background: #252525;
+    border: 1px solid #555555;
+}
+
+.start-panel input[type="text"]:focus {
+    outline: 2px solid #55b7ff;
+    outline-offset: 1px;
+}
+
+.anonymous-option {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    margin: 18px 0 24px;
+    color: #c6c6c6;
+    cursor: pointer;
+}
+
+.anonymous-option input {
+    width: 16px;
+    height: 16px;
+    accent-color: #55b7ff;
+}
+
+.start-panel button {
+    width: 100%;
+    padding: 12px;
+    color: #050505;
+    font: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: #55b7ff;
+    border: 0;
+    cursor: pointer;
+}
+
+.start-panel button:hover {
+    background: #8bceff;
+}
+
+.start-panel input:disabled {
+    color: #8d8d8d;
+    background: #1d1d1d;
+}
+
+@media (max-width: 767px) {
+    #game-canvas {
+        width: 100vw;
+        height: 100vh;
+    }
+}

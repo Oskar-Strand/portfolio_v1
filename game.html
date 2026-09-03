@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oskar Grøtting Strand</title>
+    <link rel="icon" type="image/svg" href="favicon.svg">
+    <link rel="stylesheet" href="game.css">
+    <script src="game.js"></script>
+  </head>
+    <body>
+        <canvas id="game-canvas"></canvas>
+      <main id="start-menu" class="start-menu" aria-labelledby="game-title">
+        <form id="player-form" class="start-panel">
+          <h1 id="game-title">Ready to launch?</h1>
+          <p class="intro">Can you get the high score? Try beating anyone from the top ten, to get your name on the scoreboard!</p>
+
+          <label for="company-name">Company name</label>
+          <input id="company-name" name="company" type="text" autocomplete="organization" required>
+
+          <label for="department">Department</label>
+          <input id="department" name="department" type="text" autocomplete="organization-title">
+
+          <label class="anonymous-option" for="anonymous">
+            <input id="anonymous" name="anonymous" type="checkbox">
+            <span>Play anonymously</span>
+          </label>
+
+          <button type="submit">Play</button>
+        </form>
+      </main>
+    </body>
+</html>
