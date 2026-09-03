@@ -4,6 +4,17 @@ body {
     text-align: center;
     background-color: #050505;
 }
+.right-nav {
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    width: 20%;
+    margin-left: 3vw;
+    margin-top: 20vh;
+    
+    
+}
 #game-canvas {
     width: 50vw;
     height: 100vh;
