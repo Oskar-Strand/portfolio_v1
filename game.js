@@ -11,6 +11,21 @@ let score = 0;
 let playerProfile = null;
 const rocketImage = new Image();
 rocketImage.src = "rocket.png";
+const satelliteImage = new Image();
+satelliteImage.src = "satelitte.png";
+const fallingObjectImages = [
+    "debris_01.png",
+    "debris_02.png",
+    "debris_03.png",
+    "debris_04.png",
+    "debris_05.png",
+    "debris_06.png",
+    "satelitte.png",
+].map(function (source) {
+    const image = new Image();
+    image.src = source;
+    return image;
+});
 
 const rocket = {
     lane: 1,
@@ -160,7 +175,7 @@ const minimumSpawnDelay = 50;
 function spawnObject() {
     const size = rocket.size / 3;
     const lane = Math.floor(Math.random() * lanes.length);
-
+    const image = fallingObjectImages[Math.floor(Math.random() * fallingObjectImages.length)];
 
     fallingObjects.push({
         lane,
@@ -168,6 +183,7 @@ function spawnObject() {
         y: -size,
         size,
         speed: gameSpeed,
+        image,
     });
 }
 
@@ -210,9 +226,8 @@ function drawGame() {
         rocket.size
     );
 
-    context.fillStyle = "#ff6b5f";
     for (const object of fallingObjects) {
-        context.fillRect(object.x, object.y, object.size, object.size);
+        context.drawImage(object.image, object.x, object.y, object.size, object.size);
     }
 
     drawHud(width);

@@ -6,7 +6,7 @@ body {
 }
 #game-canvas {
     width: 50vw;
-    height: 90vh;
+    height: 100vh;
     display: block;
     margin: 0 auto;
     background-color: #050505;
